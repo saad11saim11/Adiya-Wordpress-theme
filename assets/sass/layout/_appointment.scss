@@ -1,0 +1,131 @@
+.appointment {
+    background-image: url(../images/appointment/bg.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    @extend %of-hidden;
+
+    &--shape {
+        @extend %p-rel;
+
+        &:before,
+        &::after {
+            @include breakpoint(lg) {
+                position: absolute;
+                content: "";
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+        }
+
+        &::before {
+            @include breakpoint(lg) {
+                @include box(350px, 250px);
+                background-image: url(../images/appointment/shape-1.svg);
+                top: 50px;
+                left: 0;
+            }
+        }
+
+        &::after {
+            @include breakpoint(lg) {
+                @include box(350px, 250px);
+                background-image: url(../images/appointment/shape-2.svg);
+                bottom: 90px;
+                right: 0;
+
+            }
+        }
+    }
+
+
+    &__form {
+        @extend %mt-40;
+
+        input,
+        select,
+        textarea {
+            padding: 1.1rem;
+            color: $text-color;
+            border-radius: 5px;
+
+
+            &:focus {
+                box-shadow: none;
+                border-color: $primary-color;
+            }
+        }
+
+        textarea {
+            @extend %w-100;
+            min-height: 150px;
+            border: none;
+
+            &:focus {
+                border: 1px solid rgba($primary-color, $alpha: 1.0);
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        button {
+            border: none;
+            background-color: $primary-color;
+            color: $white-color;
+            padding: 1.4rem;
+            font-weight: 700;
+            margin-top: 40px;
+            @include add-prefix(transition, $transition);
+
+            &:hover {
+                @include add-prefix(transform, translateY(-3px));
+            }
+
+        }
+
+        &-wrapper {
+            background-color: $theme-color;
+            padding: 40px 25px;
+
+            @include breakpoint(md) {
+                padding: 75px 60px;
+            }
+
+            >h3,
+            >p {
+                color: $white-color;
+            }
+        }
+    }
+
+    &__content {
+        h3 {
+            @extend %mb-25;
+        }
+    }
+
+    &__open {
+        @extend %mt-35;
+
+        h4 {
+            @extend %mb-20;
+        }
+
+        strong {
+            @include font-size(18px);
+            color: $title-color;
+        }
+
+        &-list {
+            @extend %mb-25;
+        }
+
+        &-item {
+            @extend %flex;
+            gap: 30px;
+
+            &:not(:last-child) {
+                @extend %mb-10;
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.header-wrapper{
+	min-height:82px;
+}
+.blog{
+	overflow-y:visible;
+}
+ul.pagination li.page-item span.current{
+	background-color: #C9AC78;
+    color: #fff;
+}

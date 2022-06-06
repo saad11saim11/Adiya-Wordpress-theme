@@ -1,0 +1,106 @@
+.client {
+    @extend %of-hidden;
+
+    .section-header {
+
+        h3 {
+            max-inline-size: 38ch;
+        }
+    }
+
+    &__details {
+        img {
+            @extend %w-100;
+        }
+    }
+
+    &__info {
+        background-color: $body-color;
+        padding: 20px 50px;
+
+        &-wrap {
+            border-left: 5px solid $theme-color;
+            padding-inline-start: 10px;
+
+            p {
+                @extend %mb-0;
+            }
+        }
+    }
+
+    &__qoute {
+        @extend %p-rel;
+        padding-block: 50px;
+
+        &::before,
+        &::after {
+            @extend %p-abs;
+            @include box(70px, 50px);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        &::before {
+            background-image: url(../images/client/quote1.svg);
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            background-image: url(../images/client/quote2.svg);
+            bottom: 0;
+            right: 0;
+        }
+
+        blockquote {
+            margin-block: 1rem;
+            line-height: 2;
+            @include font-size(18px);
+        }
+    }
+
+    &__nav {
+        display: none;
+
+        @include breakpoint(lg) {
+            display: inline-flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 0;
+            left: 295px;
+            z-index: 1;
+        }
+
+        @include breakpoint(xl) {
+            left: 365px;
+        }
+
+    }
+
+    &__slider {
+
+        &-next,
+        &-prev {
+            padding: 2.35rem 1.5rem;
+
+
+            svg {
+                path {
+                    fill: $white-color;
+                }
+            }
+        }
+
+        &-next {
+            background-color: $theme-color;
+        }
+
+        &-prev {
+            background-color: $primary-color;
+        }
+    }
+
+    &__wrapper {
+        @extend %p-rel;
+    }
+}

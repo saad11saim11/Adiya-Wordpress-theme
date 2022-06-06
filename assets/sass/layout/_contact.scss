@@ -1,0 +1,117 @@
+.contact {
+    .section-header {
+        @extend %text-left;
+
+        &__content {
+            h3 {
+                margin: 0;
+            }
+        }
+    }
+
+
+    &__content {
+        max-width: 84%;
+
+        >p {
+            color: $white-color;
+        }
+    }
+
+    &__form {
+        @extend %p-rel;
+        z-index: 1;
+
+        input,
+        textarea {
+            @extend %w-100;
+            @include add-prefix(border, 1px solid transparent);
+            @include add-prefix(border-radius, 4px);
+            background-color: $secondary-color;
+            color: $text-color;
+            padding: 20px 30px;
+
+            &::placeholder {
+                color: $text-color;
+            }
+
+            &:focus-within {
+                outline: none;
+                @include add-prefix(border-color, rgba($theme-color, $alpha:.5));
+            }
+        }
+
+        input {
+            @extend %mb-20;
+        }
+
+        textarea {
+            @extend %mb-40;
+        }
+
+        .default-btn {
+            color: $black-color;
+            border: none;
+            width: 100%;
+        }
+    }
+}
+
+.map {
+    &__view {
+        @extend %w-100;
+        @extend %h-100;
+
+        iframe {
+            @extend %w-100;
+            height: 400px;
+        }
+    }
+
+    &__wrapper {
+        @extend %p-rel;
+    }
+
+    &__address {
+        @extend %p-30;
+        border-radius: 5px;
+        background-color: $primary-color;
+
+        @include breakpoint(lg) {
+            padding-block: 40px;
+            padding-inline: 30px;
+            position: absolute;
+            max-width: 80%;
+            bottom: -50px;
+            left: 50%;
+            width: 100%;
+            @include add-prefix(transform, translateX(-50%));
+        }
+
+        &-item {
+            @extend %flex;
+            @extend %justify-between;
+            @extend %align-items-center;
+            gap: 10px;
+
+            &-icon {
+                width: 50px;
+
+                svg {
+                    color: $theme-color;
+                    @include font-size(30px);
+                }
+            }
+
+            &-text {
+                color: $white-color;
+                width: calc(100% - 60px);
+            }
+        }
+    }
+}
+
+.form__massage {
+    color: $black-color;
+    @extend %mt-10;
+}

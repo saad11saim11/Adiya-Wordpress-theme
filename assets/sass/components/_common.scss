@@ -1,0 +1,64 @@
+//-------Who We are counter css start
+.wwa {
+    @include add-prefix(transform, translateY(-30%));
+    @extend %p-rel;
+    z-index: 1;
+
+    @include breakpoint(xxl) {
+        @include add-prefix(transform, translateY(-50%));
+    }
+
+    &__wrapper {
+        @include add-prefix(border-radius, 10px);
+        background-color: $white-color;
+        padding: 30px 40px;
+        box-shadow: 0 0 5px rgba($black-color, $alpha:.2);
+
+    }
+
+    &__item {
+
+        &--linebar {
+            @extend %p-rel;
+
+            &:before {
+                position: absolute;
+                content: "";
+                height: 100%;
+                width: 2px;
+                left: -20px;
+
+                background-color: $theme-color;
+            }
+        }
+    }
+
+    &__counter {
+        @extend %flex;
+        @extend %justify-between;
+        gap: 20px;
+
+    }
+
+    &__inner {
+        @extend %flex;
+        @extend %align-items-center;
+        gap: 20px;
+    }
+}
+
+//-------Who We are counter css end
+
+
+
+
+//-------Award css start
+.award {
+    @include background-cover;
+
+    &__item-inner {
+        gap: 15px;
+    }
+}
+
+//-------Award css end

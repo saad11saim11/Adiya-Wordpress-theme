@@ -1,0 +1,175 @@
+.about {
+    @extend %of-hidden;
+
+    &__thumb {
+        text-align: end;
+
+        &-list {
+            gap: 20px;
+            @extend %mb-20;
+
+            @include breakpoint(sm) {
+                margin-bottom: 40px;
+            }
+        }
+
+        &-item {
+            @include breakpoint(sm) {
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    z-index: -1;
+
+                }
+
+                &:first-child {
+                    @include add-prefix(transform, translateY(120px));
+
+                    &::after {
+                        top: -40px;
+                        left: -40px;
+                        @include box(80px);
+                        @include animation(rotate 15s ease-in-out infinite alternate);
+                        background-image: url(../images/about/shape-1.png);
+                        background-size: 100% 100%;
+
+                        @include breakpoint(xl) {
+                            top: -70px;
+                            left: -70px;
+                            @include box(140px);
+                        }
+                    }
+                }
+
+                &:last-child {
+
+                    &::after {
+                        top: -35px;
+                        left: -15px;
+                        @include box(30px, 70px);
+                        @include animation(floating 8s ease-in-out infinite alternate);
+                        background-image: url(../images/about/shape-2.png);
+                        background-size: 100% 100%;
+
+                    }
+                }
+            }
+
+        }
+
+        &-content {
+            @extend %p-rel;
+            background-color: $theme-color;
+            max-inline-size: 270px;
+            padding: 25px;
+
+            @include breakpoint(sm) {
+                @include add-prefix(transform, translateX(214px));
+            }
+
+            @include breakpoint(md) {
+                @include add-prefix(transform, translateX(250px));
+            }
+
+            @include breakpoint(lg) {
+                @include add-prefix(transform, translateX(175px));
+            }
+
+            @include breakpoint(xl) {
+                @include add-prefix(transform, translateX(214px));
+            }
+
+            p {
+                @extend %mb-0;
+                @include font-size(18px);
+                font-weight: 700;
+                color: $white-color;
+
+            }
+
+
+            &-title {
+                @extend %p-abs;
+                background-image: url(../images/about/bg.svg);
+                background-size: cover;
+                height: 100px;
+                width: 130px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                left: 0;
+                bottom: 0;
+
+
+                h2 {
+                    @extend %mb-0;
+                    color: $white-color;
+
+                }
+
+            }
+        }
+    }
+
+    &__content {
+        h6 {
+            text-transform: uppercase;
+            border-left: 4px solid $theme-color;
+            padding: .25rem .75rem;
+            margin-bottom: 20px;
+        }
+
+        >p {
+            @include font-size(18px);
+            margin-bottom: 30px;
+
+        }
+    }
+
+}
+
+.counter {
+    &__list {
+        @extend %mb-40;
+        gap: 20px;
+        padding-inline: 10px;
+
+        @include breakpoint(sm) {
+            @include breakpoint(max-lg) {
+                padding-inline: 30px;
+            }
+
+        }
+
+    }
+
+    &__item {
+        @extend %text-center;
+        @extend %p-rel;
+
+        &:not(:last-child) {
+            &::after {
+                @include breakpoint(xl) {
+                    position: absolute;
+                    content: "";
+                    width: 55px;
+                    height: 1px;
+                    background-color: $title-color;
+                    right: -100%;
+                    top: 50%;
+                    @include add-prefix(transform, translateY(-50%));
+                }
+            }
+
+        }
+
+
+
+        p {
+            color: $title-color;
+            font-weight: 700;
+        }
+    }
+}

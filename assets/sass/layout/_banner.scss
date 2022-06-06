@@ -1,0 +1,196 @@
+.banner {
+    @extend %p-rel;
+    @extend %of-hidden;
+    padding-top: 190px;
+    background-color: $body-color;
+
+    @include breakpoint(xl) {
+        padding-top: 350px;
+    }
+
+    &__circle {
+        @include breakpoint(xl) {
+            @include box(650px);
+            position: absolute;
+            right: -40px;
+            bottom: 16%;
+            border-radius: 50%;
+            border: 1px solid $theme-color;
+            z-index: 0;
+            @include animation(rotate 20s ease-in-out infinite forwards alternate);
+        }
+
+        &-inner {
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+            &::before {
+                @include box(25px);
+                background-color: $theme-color;
+                border-radius: 50%;
+                position: absolute;
+                content: "";
+                top: 50%;
+                left: -12.5px;
+            }
+        }
+
+        @include breakpoint(xxxl) {
+            @include box(700px);
+            right: 12%;
+            bottom: 12%;
+        }
+
+        &--child2 {
+            margin-right: -7%;
+            transform: rotate(40deg);
+            animation-delay: 5s;
+
+            @include breakpoint(xxxl) {
+                margin-right: -5%;
+                margin-bottom: -30px;
+            }
+        }
+    }
+
+    &__content {
+        .title-label {
+            @extend %mb-15;
+        }
+
+        h2 {
+            @extend %mb-30;
+        }
+
+        p {
+            @extend %mb-30;
+            @include font-size(18px);
+            max-inline-size: 65ch;
+        }
+
+        .button-list {
+            gap: 20px;
+        }
+
+        .video-btn {
+            @extend %align-items-center;
+            font-weight: 700;
+            color: $title-color;
+            display: inline-flex;
+            gap: 10px;
+
+            @include hover {
+                color: $theme-color;
+            }
+        }
+    }
+
+    &__thumb {
+        img {
+            display: inherit;
+            margin-block-start: auto;
+        }
+
+        @include breakpoint(lg) {
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+        }
+    }
+
+
+    &__slider {
+        @extend %p-rel;
+        max-inline-size: 700px;
+
+        &-wrap {
+            margin-block-start: 110px;
+        }
+
+        &-item {
+            width: max-content;
+            border-bottom: 1px solid $border-color;
+        }
+
+        &-inner {
+            @extend %flex;
+            align-items: flex-end;
+            flex-direction: column;
+
+            @include breakpoint(sm) {
+                flex-direction: row;
+            }
+        }
+
+        &-thumb {
+            @extend %w-100;
+
+            img {
+                @extend %w-100;
+            }
+
+            @include breakpoint(sm) {
+                width: initial;
+
+                img {
+                    width: inherit;
+                }
+            }
+        }
+
+        &-content {
+            background-color: $white-color;
+            padding: 2rem 4.5rem;
+
+            @include breakpoint(sm) {
+                padding: 2rem;
+            }
+
+            @include breakpoint(md) {
+                padding: 2rem 5rem;
+            }
+
+            h4 {
+                a {
+                    color: $title-color;
+                }
+            }
+        }
+
+        &-next,
+        &-prev {
+            display: none;
+
+            @include breakpoint(md) {
+                display: inline-block;
+                padding: 1.87rem 1.5rem;
+            }
+
+            @include breakpoint(lg) {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        &-next {
+            background-color: $primary-color;
+            color: $white-color;
+        }
+
+        &-prev {
+            background-color: $secondary-color;
+        }
+    }
+
+    &__nav {
+        @extend %p-abs;
+        right: 0;
+        bottom: 0;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        z-index: 1;
+    }
+
+}

@@ -1,0 +1,74 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+$bootstrap-sass-asset-helper: false !default;
+//
+// Variables
+// --------------------------------------------------
+
+
+// Colors
+
+$title-color: #2A2A2A;
+$theme-color: #C9AC78;
+$primary-color: #3B717B;
+$secondary-color:#F1F7F8;
+$border-color: #ABABAB;
+$white-color: #fff;
+$ash-color: #2F3D5F;
+$body-color: #F5F2ED;
+$black-color:#000000;
+$text-color:#6B6B6B;
+$dark-color:#191919;
+
+
+$gradient-theme: linear-gradient(150deg, rgba(0, 128, 255, 1) 0%, rgba(58, 100, 215, 1) 100%);
+
+
+
+// social-media color
+$facebook: #3b5998;
+$twitter: #55acee;
+$linkedin: #007bb5;
+$skype: #2fb7df;
+$youtube: #cd201f;
+$google: #dd4b39;
+$camera: #e4405f;
+$instagram: #e4405f;
+$tumblr: #34465d;
+$behance: #1769ff;
+$star: #e9ba17;
+$green: #0be881;
+$green-h: #0fbcf9;
+$red: #f53b57;
+$yellow: #dec32b;
+$nell: #212fb4;
+$navy: #d8e0f3;
+$placeholder: #a0a6bc;
+
+//== Typography
+
+// font-family
+
+$text-font: 'Roboto',
+sans-serif;
+
+$title-font: 'Noto Serif',
+serif;
+
+// font-size
+
+$fs-base: 16px !default;
+$fs-small:14px;
+$fs-h1: 60px;
+$fs-h2: 50px;
+$fs-h3: 34px;
+$fs-h4: 24px;
+$fs-h5: 20px;
+$fs-h6: 18px;
+
+
+
+//  transition
+$transition: all 0.3s ease;

@@ -1,0 +1,184 @@
+.service {
+    @extend %of-hidden;
+
+
+    &--shape {
+        @extend %p-rel;
+
+        @include breakpoint(lg) {
+            &:before {
+                position: absolute;
+                content: "";
+                background-image: url(../images/service/shape1.svg);
+                background-size: 100% 100%;
+                width: 260px;
+                height: 150px;
+                top: 10%;
+                left: 0;
+            }
+
+            &:after {
+                position: absolute;
+                content: "";
+                background-image: url(../images/service/shape2.svg);
+                background-size: 100% 100%;
+                width: 180px;
+                height: 120px;
+                bottom: 0;
+                right: 0;
+            }
+        }
+
+        @include breakpoint(xxl) {
+            &:before {
+                width: 325px;
+                height: 175px;
+
+            }
+
+            &::after {
+                width: 240px;
+                height: 170px;
+            }
+        }
+
+    }
+
+    &__item {
+        .dashed-line {
+            @extend %p-rel;
+
+            @include breakpoint(xl) {
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 65px;
+                    height: 1px;
+                    border: 1px dashed $text-color;
+                    right: -30px;
+                    top: 25%;
+                }
+            }
+        }
+
+        @include hover {
+            .service__thumb {
+                span {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+    }
+
+    &__single {
+        &-slider {
+            @extend %p-rel;
+        }
+
+        &-img {
+            img {
+                @extend %w-100;
+            }
+        }
+    }
+
+    &__nav {
+        @extend %p-abs;
+        gap: 10px;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1;
+
+    }
+
+    &__slide {
+
+        &-next,
+        &-prev {
+            @extend %justify-center;
+            @extend %align-items-center;
+            @include box(50px);
+            @include add-prefix(transition, $transition);
+            display: inline-flex;
+            background-color: $theme-color;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+
+            svg {
+                color: $white-color;
+            }
+        }
+    }
+
+    &__inner {
+        padding: 10px;
+    }
+
+    &__thumb {
+        span {
+            @include box(95px, 105px);
+            @include add-prefix(transition, all 0.3s cubic-bezier(1, -0.45, 0, 1.28));
+            display: grid;
+            place-items: center;
+            background-image: url(../images/blob.svg);
+            background-size: 100% 100%;
+            margin: auto auto 20px;
+
+        }
+    }
+
+    &__content {
+        h4 {
+            a {
+                color: $title-color;
+            }
+
+            &:hover {
+                a {
+                    color: $theme-color;
+                }
+            }
+        }
+
+        p {
+            @extend %mb-0;
+        }
+    }
+}
+
+
+//aminites item
+
+.aminities {
+
+    &__item {
+        gap: 15px;
+
+        &:not(:last-child) {
+            @extend %mb-30;
+        }
+
+        &-thumb {
+            @include box(60px);
+            @include add-prefix(transform, $transition);
+            display: grid;
+            place-items: center;
+            border-radius: 5px;
+            background-color: $primary-color;
+        }
+
+        &-content {
+            color: $title-color;
+            font-weight: 600;
+        }
+
+        @include hover {
+            .aminities__item-thumb {
+                background-color: $theme-color;
+            }
+        }
+    }
+}

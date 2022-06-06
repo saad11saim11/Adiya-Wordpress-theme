@@ -1,0 +1,100 @@
+.experience {
+    @extend %of-hidden;
+
+
+    &--shape {
+        @extend %p-rel;
+
+        &:after {
+            @include breakpoint(xl) {
+                position: absolute;
+                content: "";
+                height: 50%;
+                width: 40%;
+                background-color: $body-color;
+                right: 0;
+                bottom: 0;
+                z-index: -1;
+            }
+        }
+    }
+
+    &__content {
+        h3 {
+            @extend %mb-30;
+        }
+
+        p {
+            max-inline-size: 55ch;
+        }
+    }
+
+    &__thumb {
+        @extend %p-rel;
+
+        &-main {
+            @extend %p-rel;
+
+            img {
+                @extend %w-100;
+            }
+
+            .play-btn {
+                @include box(70px);
+                @include animation(zoom 1s linear infinite alternate);
+                @extend %p-abs;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                background-color: $theme-color;
+                color: $white-color;
+                top: 5%;
+                left: 10%;
+
+                @include breakpoint(md) {
+                    top: 45%;
+                    left: 45%;
+                }
+
+                @include breakpoint(lg) {
+                    top: 10%;
+                    left: -8%;
+                }
+            }
+        }
+
+        @include breakpoint(lg) {
+            margin-left: 100px;
+        }
+
+        .position-img {
+            @extend %p-abs;
+            left: 10%;
+            bottom: -30%;
+            max-inline-size: 55%;
+
+            @include breakpoint(md) {
+                bottom: -15%;
+                max-inline-size: 40%;
+            }
+
+            @include breakpoint(lg) {
+                bottom: -35%;
+                left: -25%;
+                max-inline-size: 70%;
+            }
+
+            @include breakpoint(xl) {
+                max-inline-size: 100%;
+            }
+        }
+
+
+
+
+
+    }
+
+
+
+}

@@ -1,0 +1,112 @@
+.pricing {
+    @extend %of-hidden;
+
+    &__item {
+
+        @include add-prefix(transition, all 0.3s ease-in-out);
+
+        &:hover {
+            @include add-prefix(transform, translateY(-5px));
+            box-shadow: 0 5px 10px rgba($black-color, $alpha: .25);
+
+            .pricing__thumb {
+                img {
+                    @include add-prefix(transform, rotateY(360deg));
+
+                }
+            }
+        }
+    }
+
+    &__inner {
+        @extend %p-40;
+        @extend %p-rel;
+        background-color: $body-color;
+
+        .package-tag {
+            @extend %d-inline-block;
+            @extend %p-abs;
+            @extend %text-center;
+            background-color: $primary-color;
+            min-inline-size: 190px;
+            padding-block: 1rem;
+            writing-mode: vertical-lr;
+            top: 50px;
+            right: 0;
+            z-index: 1;
+
+            p {
+                @extend %m-0;
+                @include font-size(18px);
+                color: $white-color;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__thumb {
+        @extend %of-hidden;
+        @extend %p-rel;
+        @extend %mb-50;
+
+        img {
+            @include add-prefix(transition, all 0.4s ease-in-out);
+        }
+
+        .price-tag {
+            @extend %p-abs;
+            @include box(65px, 75px);
+            top: 0;
+            left: 0;
+            background-image: url(../images/blob.svg);
+            background-size: 100% 100%;
+            display: grid;
+            place-items: center;
+
+            h4 {
+                color: $white-color;
+            }
+        }
+    }
+
+    &__content {
+        .default-btn {
+            margin: auto;
+        }
+    }
+
+    &__list {
+        @extend %mb-40;
+        @extend %p-rel;
+        z-index: 1;
+
+        &:after {
+            @extend %p-abs;
+            background-image: url(../images/pricing/bg.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 130%;
+            bottom: -10px;
+            left: 0;
+            z-index: -1;
+        }
+
+        &-item {
+            span {
+                @extend %mr-10;
+
+                svg {
+                    color: $theme-color;
+                }
+            }
+
+            &:not(:last-child) {
+                margin-block-end: 10px;
+            }
+
+
+        }
+    }
+}

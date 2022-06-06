@@ -1,0 +1,166 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+
+.footer {
+    @extend %of-hidden;
+    background-color: $body-color;
+
+    &__shape {
+        @extend %p-rel;
+
+        &:before,
+        &:after {
+            @include breakpoint(xl) {
+                background-size: cover;
+                position: absolute;
+                content: "";
+                z-index: 0;
+            }
+        }
+
+        &:before {
+            @include breakpoint(xl) {
+                @include box(600px, 400px);
+                background-image: url(../images/appointment/shape-3.svg);
+                left: -300px;
+                bottom: 0;
+            }
+
+            @include breakpoint(xxl) {
+                width: 1000px;
+                height: 800px;
+                left: -500px;
+                bottom: -200px;
+
+            }
+        }
+
+        &:after {
+            @include breakpoint(xl) {
+                @include box(200px, 150px);
+                background-image: url(../images/appointment/shape-2.svg);
+                right: 0;
+                bottom: 100px;
+            }
+
+            @include breakpoint(xxl) {
+                @include box(300px, 200px);
+            }
+        }
+    }
+
+    &__wrapper {
+        @extend %of-hidden;
+    }
+
+
+    &__about {
+        @extend %p-rel;
+        z-index: 1;
+
+        >a {
+            @extend %mb-40;
+            @extend %d-inline-block;
+
+        }
+
+        .social {
+            @extend %mt-40;
+            @extend %p-rel;
+
+            &:after {
+                @extend %p-abs;
+                width: 100%;
+                max-inline-size: 80%;
+                height: 1px;
+                background-color: $border-color;
+                top: -40px;
+                left: 0;
+            }
+        }
+    }
+
+    &__newsletter {
+        p {
+            &:last-child {
+                @include font-size(14px);
+
+                a {
+                    font-weight: 700;
+                    color: $title-color;
+                    text-decoration: underline;
+                }
+            }
+
+        }
+
+        .input-group {
+            border: 1px solid $border-color;
+
+            input,
+            .input-group-text {
+                background-color: transparent;
+                border: none;
+                padding: 1rem 1.5rem;
+
+                &::placeholder {
+                    color: $border-color;
+                }
+            }
+
+            svg {
+                color: $border-color;
+            }
+        }
+
+    }
+
+
+
+    &__title {
+        @extend %mb-30;
+    }
+
+    &__link {
+        &-list {
+            column-count: 2;
+            column-gap: 30px;
+        }
+
+        &-item {
+            &:not(:last-child) {
+                @extend %mb-10;
+            }
+
+            a {
+                @extend %d-inline-block;
+                @include add-prefix(transition, $transition);
+
+                @include hover {
+                    @include add-prefix(transform, translateX(5px));
+                }
+            }
+        }
+
+    }
+
+    &__copyright {
+        @extend %flex;
+        @extend %align-items-center;
+        @extend %justify-between;
+        @extend %p-rel;
+        border-top: 1px solid $border-color;
+        padding: 20px;
+        z-index: 1;
+
+        p {
+            @extend %text-center;
+
+            @include breakpoint(lg) {
+                text-align: end;
+            }
+        }
+    }
+}

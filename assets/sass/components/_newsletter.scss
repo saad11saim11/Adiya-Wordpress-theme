@@ -1,0 +1,78 @@
+.newsletter {
+    @extend %of-hidden;
+
+    &__wrapper {
+        max-inline-size: 1500px;
+        margin: auto;
+        background-color: $primary-color;
+        padding-block-start: 70px;
+        padding-block-end: 130px;
+        border-radius: 5px;
+        padding-inline: 15px;
+
+        &--bg-shapes {
+
+
+            @extend %p-rel;
+
+            &:before,
+            &:after {
+                @extend %p-abs;
+                @extend %h-100;
+                width: 22%;
+                top: 0;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+
+                @include breakpoint(max-lg) {
+                    display: none;
+                }
+            }
+
+            &:before {
+                background-image: url(../images/newsletter/bg-1.svg);
+                left: 0
+            }
+
+            &:after {
+                background-image: url(../images/newsletter/bg-2.svg);
+                right: 0
+            }
+        }
+    }
+
+    &__form {
+
+        form {
+            @extend %p-rel;
+        }
+
+        input {
+            @extend %p-15;
+            border-radius: 5px;
+            padding-inline-end: 30%;
+
+            @include breakpoint(md) {
+                padding: 25px;
+            }
+        }
+
+        button {
+            @extend %p-abs;
+            @extend %h-100;
+            right: 0;
+            border-radius: 5px;
+            top: 0;
+            background-image: $gradient-theme;
+            color: $white-color;
+            border: none;
+            padding-inline: 1.5rem;
+
+            @include breakpoint(md) {
+                padding-inline: 3rem;
+            }
+
+        }
+    }
+}

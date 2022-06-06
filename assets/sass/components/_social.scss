@@ -1,0 +1,21 @@
+.social {
+    @extend %flex;
+    @extend %align-items-center;
+    gap: 10px;
+
+    &__link {
+        @extend %d-inline-block;
+        @include box(45px);
+        @include add-prefix(transition, $transition);
+        line-height: 45px;
+        text-align: center;
+        background-color: $primary-color;
+        color: $white-color;
+
+
+        @include hover() {
+            background-color: $theme-color;
+            color: $white-color;
+        }
+    }
+}

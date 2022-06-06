@@ -1,0 +1,41 @@
+.insta {
+    @extend %of-hidden;
+
+    &__item {
+        @extend %p-rel;
+        @extend %of-hidden;
+
+        &:hover {
+            .insta__content {
+                bottom: 0;
+            }
+        }
+    }
+
+    &__thumb {
+        img {
+            @extend %w-100;
+        }
+    }
+
+    &__content {
+        @extend %text-center;
+        @extend %p-abs;
+        @extend %w-100;
+        @include add-prefix(transition, all .3s ease-in-out);
+        background-color: rgba($color: #2A2A2A, $alpha: .65);
+        color: $white-color;
+        padding: 1rem;
+        bottom: -100%;
+        left: 0;
+
+        svg {
+            @include font-size(30px);
+        }
+
+        a {
+            display: block;
+            color: $white-color;
+        }
+    }
+}

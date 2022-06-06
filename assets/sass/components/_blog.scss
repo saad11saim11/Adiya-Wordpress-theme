@@ -1,0 +1,240 @@
+.blog {
+    @extend %of-hidden;
+
+    .section-header {
+        h3 {
+            max-inline-size: 36ch;
+        }
+    }
+
+    &__item {
+        &:hover {
+            .blog__thumb {
+                img {
+                    @include add-prefix(transform, scale(1.2));
+                }
+            }
+
+            .blog__content {
+                h4 {
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    &__thumb {
+        @extend %mb-30;
+        @extend %of-hidden;
+
+        img {
+            @extend %w-100;
+            @include add-prefix(transition, all .3s linear);
+        }
+    }
+
+    &__content {
+        padding-inline: 20px;
+
+        h4 {
+            @extend %mb-25;
+
+            a {
+                color: $title-color;
+                @include add-prefix(transition, all .2s linear);
+            }
+        }
+    }
+
+    &__bottom {
+        @extend %flex;
+        gap: 20px;
+
+        >p {
+            max-inline-size: calc(100% - 110px);
+        }
+    }
+
+    &__date {
+        @include box(90px, 80px);
+        background-color: $primary-color;
+        display: grid;
+        place-content: center;
+
+        h3,
+        p {
+            @extend %mb-0;
+            color: $white-color;
+            line-height: 1.2;
+        }
+    }
+}
+
+
+.pagination {
+    gap: 10px;
+}
+
+.page-link {
+    border-radius: 5px;
+    background-color: $secondary-color;
+    color: $title-color;
+    box-shadow: none;
+
+    &:hover {
+        background-color: $theme-color;
+        color: $white-color;
+    }
+}
+
+//blog single page
+.news {
+
+
+    &__item-thumb {
+        @extend %of-hidden;
+        margin-block-end: 20px;
+
+        img {
+            @include add-prefix(transition, $transition);
+            @extend %w-100;
+        }
+    }
+
+    &__item-content {
+        padding: 0 20px 20px;
+
+        h6,
+        h4 {
+            a {
+                color: $title-color;
+                @include add-prefix(transition, $transition);
+            }
+        }
+
+        >p {
+            line-height: 1.6;
+        }
+
+        blockquote {
+            background-color: $secondary-color;
+            padding-block: 15px;
+
+            p {
+                @extend %mb-0;
+                border-left: 4px solid $theme-color;
+                padding-inline-start: 15px;
+                max-inline-size: 85%;
+                margin-inline-start: 15px;
+
+            }
+        }
+    }
+
+
+
+    &__tags {
+        gap: 10px;
+        margin-block-end: 10px;
+    }
+
+    &__meta {
+        gap: 15px;
+    }
+
+    &__author {
+        @extend %p-rel;
+
+        &:after {
+            @extend %p-abs;
+            content: ",";
+            right: -7px;
+        }
+    }
+
+    &__item {
+        @include add-prefix(transition, $transition);
+
+        &:hover {
+            box-shadow: 0 0 5px rgba($black-color, $alpha: .20);
+
+            .news__item-thumb {
+                img {
+                    @include add-prefix(transform, scale(1.1));
+                }
+            }
+
+            .news__item-content {
+                h6 {
+                    a {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.blog-page {
+    .pagination {
+        gap: 10px;
+    }
+
+    .page-link {
+        border-radius: 5px;
+        background-color: $secondary-color;
+        color: $title-color;
+        box-shadow: none;
+
+        &:hover {
+            background-color: $theme-color;
+        }
+    }
+}
+
+//comment
+.comment {
+    &__title {
+        @extend %mb-30;
+
+        @include breakpoint(lg) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__form {
+
+        input,
+        textarea {
+            @extend %w-100;
+            display: block;
+            background-color: $secondary-color;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+
+            &:focus {
+                border: 1px solid rgba($primary-color, $alpha: .30);
+            }
+        }
+
+        textarea {
+            min-block-size: 250px;
+        }
+
+        .default-btn {
+            @extend %w-100;
+            display: block;
+            border: none;
+            outline: none;
+
+            span {
+                color: $white-color;
+            }
+        }
+    }
+}

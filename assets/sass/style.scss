@@ -1,0 +1,69 @@
+/*!
+Template Name: Adiya
+Template URI: https: //themeforest.net/user/theme_crazy/portfolio
+Author: https: //themeforest.net/user/theme_crazy
+Author URI: https: //themeforest.net/user/theme_crazy
+Description: Adiya is a modern Spa & Beauty 
+Version: 1.0.0
+Text Domain: Adiya
+Tags: spa, Adiya, spa landing, spa & beauty , beauty parloure
+
+*/
+
+
+
+
+
+
+
+
+
+/*=====================================================================*/
+
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@import 'abstracts/variables',
+'abstracts/functions',
+'abstracts/mixins';
+
+// 2. Vendors
+@import 'vendors/normalize',
+'vendors/rfs';
+
+// 3. Base stuff
+@import 'base/fonts',
+'base/typography',
+'base/animations',
+'base/preloader',
+'base/helpers';
+
+@import "abstracts/extend";
+
+// 4. Layout-related sections
+@import 'layout/header',
+'layout/banner',
+'layout/about',
+'layout/experience',
+'layout/client',
+'layout/appointment',
+'layout/service',
+'layout/gallery',
+'layout/insta',
+'layout/contact',
+'layout/footer';
+
+// 5. Components
+@import 'components/button',
+'components/social',
+'components/pricing',
+'components/blog',
+'components/widget',
+'components/newsletter',
+'components/rating';
+
+// 6. Page-specific styles
+@import 'pages/home';
+
+// 7. Themes
+@import 'themes/default';
